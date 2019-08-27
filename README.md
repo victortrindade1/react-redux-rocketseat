@@ -14,9 +14,7 @@ Eu posso ter 1 reducer, e neste index estaria o próprio reducer, mas dependendo
 
 `import { createStore } from 'redux'; //Esta é a função q cria o store
 import rootReducer from "./reducers";
-
 const store = createStore(rootReducer);
-
 export default store;`
 
 #### src/store/reducers/index.js
@@ -24,10 +22,8 @@ export default store;`
 Neste arquivo eu combino os reducers.
 
 `import { combineReducers } from 'redux';
-
 import course from './course'; //reducer 1
 import user from './user'; //reducer 2
-
 export default combineReducers({
 	course,
 	user,
