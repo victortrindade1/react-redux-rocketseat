@@ -28,10 +28,10 @@ Neste arquivo eu combino os reducers.
 `import course from './course'; //reducer 1`
 `import user from './user'; //reducer 2`
 
-`export default combineReducers({`
-`course,`
-`user,`
-`});`
+`export default combineReducers({
+	course,
+	user,
+});`
 
 
 
