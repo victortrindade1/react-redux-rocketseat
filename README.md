@@ -17,6 +17,10 @@ import rootReducer from "./reducers";
 const store = createStore(rootReducer);  
 export default store;`
 
+#### src/store/reducers
+
+Nesta pasta crio meus reducers. Veja o exemplo do reducer src/store/reducers/course.js
+
 #### src/store/reducers/index.js
 
 Neste arquivo eu combino os reducers.
@@ -28,3 +32,29 @@ export default combineReducers({
 	course,  
 	user,  
 });`
+
+#### src/store/actions
+
+Coloque todas as suas actions juntas para organizar! Pense numa action como um trigger. 
+
+Para interagir as actions com o redux, vc precisa colocar como primeiro parâmetro do return um type com uma constante da action (veja src/store/actions/course.js).
+
+## src/App.js
+
+Importe o Provider da lib e o store que vc criou
+
+`import { Provider } from "react-redux"; `
+`import store from './store';`
+
+### Provider
+
+É com o Provider q consigo passar as propriedades do state pros componentes. Então o Provider precisa vir hierarquicamente acima dos componentes.
+
+`
+<div className="App">  
+	<Provider store={store}>  
+		<Video />  
+		<Sidebar />  
+	</Provider>  
+</div>  
+`

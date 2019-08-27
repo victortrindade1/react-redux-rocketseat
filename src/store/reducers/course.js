@@ -21,7 +21,7 @@ const INITIAL_STATE = {
 	]
 }
 
-//O reducer é uma função q retorna meu estado inicial
+//O reducer é uma função q retorna meu estado inicial, mas tb pode manipular o estado com actions
 export default function course(state = INITIAL_STATE, action) {
 	if (action.type === "TOGGLE_LESSON") {
 		return {
