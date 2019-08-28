@@ -112,3 +112,8 @@ O mapDispatchToProps é passado no connect:
 	mapStateToProps, mapDispatchToProps
 )(MyComponent);`
 
+# Redux com Hooks
+
+É um jeito ainda mais otimizado, menos verboso. Não tem mais o mapStateToProps nem o mapDispatchToProps. Não cheguei a abordar aqui. O código mais otimizado vc encontra aqui:
+
+https://github.com/diego3g/react-hooks-redux-example
