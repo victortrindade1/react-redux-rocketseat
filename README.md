@@ -50,12 +50,12 @@ Importe o Provider da lib e o store que vc criou
 
 É com o Provider q consigo passar as propriedades do state pros componentes. Então o Provider precisa vir hierarquicamente acima dos componentes.
 
-`<div className="App">  
-	<Provider store={store}>  
-		<Video />  
-		<Sidebar />  
-	</Provider>  
-</div>`
+`<div className="App">` <br/>
+`   <Provider store={store}>` <br/>
+`      <Video />` <br/>
+`      <Sidebar />` <br/> 
+`   </Provider>` <br/>
+`</div>`
 
 ## Redux nos componentes
 
