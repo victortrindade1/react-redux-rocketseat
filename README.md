@@ -50,11 +50,65 @@ Importe o Provider da lib e o store que vc criou
 
 É com o Provider q consigo passar as propriedades do state pros componentes. Então o Provider precisa vir hierarquicamente acima dos componentes.
 
-`
-<div className="App">  
+`<div className="App">  
 	<Provider store={store}>  
 		<Video />  
 		<Sidebar />  
 	</Provider>  
-</div>  
-`
+</div>`
+
+## Redux nos componentes
+
+### connect
+
+O connect é o responsável por conectar o componente ao store. 
+No "export default MyComponent", vc coloca "export default connect()(MyComponent)".
+
+`import { connect } from 'react-redux';`
+
+`export default connect(state => ({
+	param1: state.reducer1.param1,
+	param2: state.reducer1.param2
+	...
+}))(MyComponent);`
+
+O connect possui dois helpers para organizar seu código:
+* mapStateToProps
+* mapDispatchToProps
+
+`export default connect(
+	mapStateToProps, mapDispatchToProps
+)(MyComponent);`
+
+#### mapStateToProps
+
+Mapeia os itens do state que eu desejo neste componente. Se torna argumento do connect.
+
+`const mapStateToProps = state => ({
+	param1: state.reducer1.param1
+})`
+
+`export default connect(mapStateToProps)(MyComponent);`
+
+#### mapDispatchToProps
+
+Posso dar nomes às actions do componente. Em vez de eu escrever um dispatch dentro do return, eu separo as actions para organizar.
+
+É auxiliado por um helper do Redux chamado bindActionCreators, que torna mais legível o código.
+
+Sem bindActionCreators:
+`const mapDispatchToProps = dispatch => ({
+	toggleLesson: (module, lesson) => dispatch(CourseActions.toggleLesson(module, lesson))
+})`
+
+Com bindActionCreators:
+`import { bindActionCreators } from 'redux'`
+
+`const mapDispatchToProps = dispatch => bindActionCreators(CourseActions, dispatch)`
+
+O mapDispatchToProps é passado no connect:
+
+`export default connect(
+	mapStateToProps, mapDispatchToProps
+)(MyComponent);`
+
